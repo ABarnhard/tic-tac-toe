@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ABarnhard/tic-tac-toe/issues"
   },
-  "homepage": "https://github.com/ABarnhard/tic-tac-toe"
+  "homepage": "https://github.com/ABarnhard/tic-tac-toe",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
 }
