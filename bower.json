@@ -1,0 +1,11 @@
+{
+  "name": "tic-tac-toe",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ABarnhard/tic-tac-toe",
+  "authors": [
+    "Adam Barnhard <adam.barnhard@digitalreasoning.com>"
+  ],
+  "description": "unbeatable tic tac toe",
+  "main": "index.html",
+  "license": "MIT"
+}
