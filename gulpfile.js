@@ -14,12 +14,13 @@ var jscs      = require('gulp-jscs');
 var copy      = require('gulp-copy');
 
 var paths = {
-  less: ['./app/**/*.less'],
-  jade: ['./app/**/*.jade'],
-  code: ['./app/js/**/*.js']
+  less:   ['./app/**/*.less'],
+  jade:   ['./app/**/*.jade'],
+  code:   ['./app/js/**/*.js'],
+  assets: ['./app/assets/**/*']
 };
 
-gulp.task('default', ['less', 'jade', 'lint', 'jscs', 'watch']);
+gulp.task('default', ['less', 'jade', 'lint', 'jscs', 'copy-code', 'copy-assets', 'watch']);
 
 gulp.task('less', function(done) {
   gulp.src(paths.less)
@@ -50,10 +51,20 @@ gulp.task('jscs', function() {
            .pipe(jscs());
 });
 
+gulp.task('copy-code', function() {
+  return gulp.src(paths.code).pipe(copy('./public'));
+});
+
+gulp.task('copy-assets', function() {
+  return gulp.src(paths.assets).pipe(copy('./public/assets'));
+});
+
 gulp.task('watch', function() {
-  gulp.watch(paths.less, ['less']);
-  gulp.watch(paths.jade, ['jade']);
-  gulp.watch(paths.code, ['lint']);
-  gulp.watch(paths.code, ['jscs']);
+  gulp.watch(paths.less,   ['less']);
+  gulp.watch(paths.jade,   ['jade']);
+  gulp.watch(paths.code,   ['lint']);
+  gulp.watch(paths.code,   ['jscs']);
+  gulp.watch(paths.code,   ['copy-code']);
+  gulp.watch(paths.assets, ['copy-assets']);
 });
 
