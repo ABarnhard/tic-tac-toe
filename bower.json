@@ -7,5 +7,14 @@
   ],
   "description": "unbeatable tic tac toe",
   "main": "index.html",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "gsap": "~1.17.0",
+    "pixi.js": "~3.0.7",
+    "angular": "~1.4.3",
+    "angular-ui-router": "~0.2.15",
+    "jquery": "~2.1.4",
+    "lodash": "~3.10.0",
+    "moment": "~2.10.3"
+  }
 }
