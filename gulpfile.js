@@ -1,22 +1,17 @@
-'use strict';
+"use strict";
 
 var gulp      = require('gulp');
-var gutil     = require('gulp-util');
-var bower     = require('bower');
-var concat    = require('gulp-concat');
 var less      = require('gulp-less');
 var minifyCss = require('gulp-minify-css');
 var rename    = require('gulp-rename');
-var sh        = require('shelljs');
 var jade      = require('gulp-jade');
 var jshint    = require('gulp-jshint');
 var jscs      = require('gulp-jscs');
-var copy      = require('gulp-copy');
 
 var paths = {
   less:   ['./app/**/*.less'],
   jade:   ['./app/**/*.jade'],
-  code:   ['./app/js/**/*.js'],
+  code:   ['./app/**/*.js'],
   assets: ['./app/assets/**/*']
 };
 
@@ -52,11 +47,11 @@ gulp.task('jscs', function() {
 });
 
 gulp.task('copy-code', function() {
-  return gulp.src(paths.code).pipe(copy('./public'));
+  return gulp.src(paths.code).pipe(gulp.dest('./public'));
 });
 
 gulp.task('copy-assets', function() {
-  return gulp.src(paths.assets).pipe(copy('./public/assets'));
+  return gulp.src(paths.assets).pipe(gulp.dest('./public/assets'));
 });
 
 gulp.task('watch', function() {
