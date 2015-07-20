@@ -1,0 +1,21 @@
+doctype html
+// [if IE 9]>html.lt-ie10(lang='en')<![endif]
+html(ng-app='tictactoe', lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Tic Tac Toe
+    link(rel='stylesheet', href='/vendor/fontawesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/vendor/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/index.css')
+    link(rel='stylesheet', href='/views/main/main.css')
+  body
+    include views/main/main
+
+    script(src='/vendor/jquery/dist/jquery.min.js')
+    script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
+    script(src='/vendor/angular/angular.js')
+    script(src='/vendor/angular-ui-router/release/angular-ui-router.min.js')
+    script(src='/index.js')
+
