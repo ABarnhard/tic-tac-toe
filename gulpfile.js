@@ -1,18 +1,20 @@
 'use strict';
 
-var gulp      = require('gulp');
-var less      = require('gulp-less');
-var minifyCss = require('gulp-minify-css');
-var rename    = require('gulp-rename');
-var jade      = require('gulp-jade');
-var jshint    = require('gulp-jshint');
-var jscs      = require('gulp-jscs');
+var gulp      = require('gulp'),
+    less      = require('gulp-less'),
+    minifyCss = require('gulp-minify-css'),
+    rename    = require('gulp-rename'),
+    jade      = require('gulp-jade'),
+    jshint    = require('gulp-jshint'),
+    jscs      = require('gulp-jscs'),
+    concat    = require('gulp-concat');
 
 var paths = {
   less:   ['./app/**/*.less'],
   jade:   ['./app/**/*.jade'],
   code:   ['./app/**/*.js'],
-  assets: ['./app/assets/**/*']
+  assets: ['./app/assets/**/*'],
+  concat: ['./app/index.js', './app/**/*.js']
 };
 
 gulp.task('default', ['less', 'jade', 'lint', 'jscs', 'copy-code', 'copy-assets', 'watch']);
